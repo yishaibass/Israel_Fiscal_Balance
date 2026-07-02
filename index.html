@@ -133,6 +133,18 @@
   .legend-inline{font-family:"Arial","Helvetica Neue",sans-serif;font-size:11.5px;color:var(--muted);
     display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
   @media(max-width:880px){.grid2,.demo,.heroRow{grid-template-columns:1fr;}}
+  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  @media(max-width:600px){
+    .wrap{padding:20px 14px 56px;}
+    h1{font-size:22px;}
+    .sub{font-size:13px;}
+    .card{padding:16px 14px;}
+    .tabs button{padding:9px 10px;font-size:12px;}
+    .demo{grid-template-columns:1fr;}
+    .big{font-size:32px;}
+    .secbtns-slim button{padding:6px 13px;font-size:11.5px;}
+    .fintbl{font-size:12px;}
+  }
 </style>
 </head>
 <body>
@@ -284,7 +296,7 @@ function dashMarkup(sfx, note, data){
     <div class="card">
       <h2 id="ioTitle${sfx}">הרכב מיסים והעברות</h2>
       <p class="cap">לחודש למשק בית, ₪. <span class="pill io-in">מיסים</span> — מה ששולם למדינה · <span class="pill io-out">העברות</span> — מה שהתקבל מהמדינה.</p>
-      <div id="ioTable${sfx}"></div>
+      <div id="ioTable${sfx}" class="tblwrap"></div>
     </div>
     <div class="card">
       <h2 id="demoTitle${sfx}">פרופיל המגזר</h2>
@@ -572,7 +584,7 @@ document.getElementById('methodBody').innerHTML = `
 
   <h3>בדיקת השוואה מול הפרסום (2018)</h3>
   <p>הסעיפים המוקצים — נטל מיסים עקיפים ושירותים ציבוריים בעין — מוקצים למשקי הבית לפי מפתחות קרלינסקי, שדה, יוגב ושראל; קצבאות מזומן נלקחות ישירות מהסקר. להלן ממוצעינו למשק בית לחודש (דשבורד זה, 2018) לעומת נתוני המגזר המעוגלים בפרסום. <b>נתונים אלה הם שכפול ויש לאמתם עם המחברים.</b></p>
-  <table class="fintbl" style="margin-top:6px">
+  <div class="tblwrap"><table class="fintbl" style="margin-top:6px">
     <thead><tr>
       <th class="rght">מגזר · 2018, ₪/משק בית/חודש</th>
       <th>דשבורד זה</th><th>מאמר (≈)</th><th>Δ %</th><th>Δ ₪/חודש</th>
@@ -587,7 +599,7 @@ document.getElementById('methodBody').innerHTML = `
       <tr class="grp-out"><td class="rght">חרדים</td><td>₪12.6K</td><td>₪12.9K</td><td class="chg-neg">−2.4%</td><td class="chg-neg">−₪0.3K</td></tr>
       <tr class="grp-out"><td class="rght">ערבים</td><td>₪10.0K</td><td>₪10.1K</td><td class="chg-neg">−0.8%</td><td class="chg-neg">−₪0.1K</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p class="small">סך המיסים הלאומי של ₪405 מיליארד תואם את הפרסום בדיוק. הפערים לפי מגזר לעיל נמצאים בתוך טווח רעש העיגול ודגימת הגלים המאוגדים, מלבד המיסים מבוססי ההון של המגזר החרדי, שסמנו לבדיקת המחברים.</p>
 
   <h3>מקורות ואמינות</h3>
